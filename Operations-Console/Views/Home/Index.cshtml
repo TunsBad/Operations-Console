@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = ViewBag.Message;
+}
+
+<div style="padding-bottom: 5px;">
+    <span class="openside" style="font-size:22px; cursor:pointer; padding-left: 18px;" onclick="openServerStatsNav()">&#9776;&nbsp;</span>
+    <strong><span id="appName" style="font-family:verdana; margin-left: 15px; font-size: 22px;"></span></strong>
+</div>
+
+<div id="mySidenav" class="serverstats-sidenav">
+    <a><br></a>
+    <div id="appbuttons">
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="container-fluid" id="stats"></div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/app/index.js"></script>
+}
+

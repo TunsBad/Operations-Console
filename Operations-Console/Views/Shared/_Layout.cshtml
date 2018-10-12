@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="appTitle"></title>
+
+    <link href="~/Content/styles.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/semantic.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+
+    <link href="~/Content/kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/styles/csi-madina.css" rel="stylesheet" />
+
+    <script src="~/Content/jquery.min.js"></script>
+    <script src="~/Content/jquery-migrate-3.0.0.min.js"></script>
+    <script src="~/Content/kendo/js/jszip.min.js"></script>
+    <script src="~/Content/kendo/js/kendo.all.min.js"></script>
+    <script>
+        var Api = '@System.Configuration.ConfigurationManager.AppSettings["API_URL"]';
+        if (Api == '') {
+            Api = 'http://localhost:62278/';
+        };
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="/">
+                    <img src="~/Content/MTN-Logo-1024x576.jpg" height="52" width="100" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse hidden-xs hidden-sm">
+                <ul class="nav navbar-nav">
+                    <li class="active"><p style="padding: 10px; font-size: 22px; color: #FFB300;"><strong>@ViewBag.Title</strong></p></li>
+                </ul>
+                <div class="nav navbar-nav pull-right">
+                    <a class='btncolor' href="/">
+                        <span class='btntext1'><b>SERVER STATS</b></span>
+                    </a>
+                    <a class='btncolor' href="/home/appstatus">
+                        <span class='btntext1'><b>APP STATS</b></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid body-content">
+        <div class="page-content" style="min-height: 530px">
+            <div class="row">
+                <div class="col-md-12 hidden-xs hidden-sm">
+                    <div class="row">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script src="~/Scripts/app/server-apps.js"></script>
+</body>
+</html>

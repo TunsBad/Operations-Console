@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = ViewBag.Message;
+}
+<div class="col-md-10 col-md-offset-1">
+    <div id="serverReportGrid"></div>
+</div>
+@section scripts{
+    <script>
+        var serverid = @ViewBag.Id;
+    </script>
+    <script src="~/Scripts/app/server-report.js"></script>
+}
+
